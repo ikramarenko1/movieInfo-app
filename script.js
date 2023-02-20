@@ -53,4 +53,7 @@ let getMovie = () => {
 				result.innerHTML = `<h3 class="msg">Error Occured!</h3>`;
 			});
 	}
-}
+};
+
+searchBtn.addEventListener("click", getMovie);
+window.addEventListener("load", getMovie);
