@@ -9,7 +9,7 @@ let getMovie = () => {
 
 	// !If input field is empty
 	if (movieName.length <= 0) {
-		result.innerHTML = `<h3 class="msg">Please enter a movie name</h3>`;
+		result.innerHTML = `<h3 class="msg">Please enter a movie name!</h3>`;
 	} else {
 		fetch(url).then((resp) => resp.json()).then((data) => {
 			// !If movie exists in database
@@ -36,12 +36,12 @@ let getMovie = () => {
 								<div>${data.Genre.split(",").join("</div><div>")}</div>
 							</div>
 						</div>
-
-						<h3>Plot:</h3>
-						<p>${data.Plot}</p>
-						<h3>Cast:</h3>
-						<p>${data.Actors}</p>
 					</div>
+
+					<h3>Plot:</h3>
+					<p>${data.Plot}</p>
+					<h3>Cast:</h3>
+					<p>${data.Actors}</p>
 				`;
 			} else {
 				result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
